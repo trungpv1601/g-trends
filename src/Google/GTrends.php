@@ -636,12 +636,12 @@ class GTrends
         }
 
         $client->send();
-        $client->setOptions([
-            'curloptions' => [
-                CURLOPT_COOKIEFILE => $cookieJar,
-            ], ]);
+        // $client->setOptions([
+        //     'curloptions' => [
+        //         CURLOPT_COOKIEFILE => $cookieJar,
+        //     ], ]);
         $client->send();
-        unlink($cookieJar);
+        // unlink($cookieJar);
 
         $statusCode = $client->getResponse()->getStatusCode();
         if ($statusCode == 200) {
