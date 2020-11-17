@@ -607,12 +607,12 @@ class GTrends
         }
 
         $client = new Http\Client();
-        $cookieJar = tempnam(sys_get_temp_dir(), 'cookie');
+        // $cookieJar = tempnam(sys_get_temp_dir(), 'cookie');
         $client->setOptions([
             'adapter' => Http\Client\Adapter\Curl::class,
-            'curloptions' => [
-                CURLOPT_COOKIEJAR => $cookieJar,
-            ],
+            // 'curloptions' => [
+            //     CURLOPT_COOKIEJAR => $cookieJar,
+            // ],
             'maxredirects' => 10,
             'timeout' => 100, ]);
         $client->setUri($uri);
